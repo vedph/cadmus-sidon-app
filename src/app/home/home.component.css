@@ -1,0 +1,22 @@
+.banner {
+  height: 258px;
+  margin-bottom: 16px;
+}
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#banner h1 {
+  position: relative;
+  padding-top: 60px;
+  width: auto;
+  text-align: center;
+  font-size: 100px;
+  font-weight: normal;
+  letter-spacing: -5px;
+  color: #ac7666;
+}
+article {
+  column-width: 600px;
+}
