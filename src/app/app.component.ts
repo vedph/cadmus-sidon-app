@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     private _appService: AppService,
     private _appQuery: AppQuery,
     private _router: Router,
-    private env: EnvService
+    env: EnvService
   ) {
     this.version = env.get('version') || '0.0.0';
   }
