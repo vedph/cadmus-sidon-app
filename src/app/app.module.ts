@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -44,11 +44,14 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 // ngx-markdown
 import { MarkdownModule } from 'ngx-markdown';
-// moment
-import { MomentModule } from 'ngx-moment';
 
 // myrmidon
-import { EnvServiceProvider, NgToolsModule } from '@myrmidon/ng-tools';
+import {
+  EnvServiceProvider,
+  languageFactory,
+  NgToolsModule,
+  WindowRefService,
+} from '@myrmidon/ng-tools';
 import { NgMatToolsModule } from '@myrmidon/ng-mat-tools';
 import {
   AuthJwtInterceptor,
@@ -69,6 +72,7 @@ import { CadmusStateModule } from '@myrmidon/cadmus-state';
 import { CadmusUiModule } from '@myrmidon/cadmus-ui';
 import { CadmusUiPgModule } from '@myrmidon/cadmus-ui-pg';
 import { CadmusRefsAssertionModule } from '@myrmidon/cadmus-refs-assertion';
+import { CadmusRefsAssertedChronotopeModule } from '@myrmidon/cadmus-refs-asserted-chronotope';
 
 // locals
 import { AppRoutingModule } from './app-routing.module';
@@ -81,7 +85,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { PART_EDITOR_KEYS } from './part-editor-keys';
 import { INDEX_LOOKUP_DEFINITIONS } from './index-lookup-definitions';
 import { ITEM_BROWSER_KEYS } from './item-browser-keys';
-import { CadmusRefsAssertedChronotopeModule } from '@myrmidon/cadmus-refs-asserted-chronotope';
 
 @NgModule({
   declarations: [
@@ -139,8 +142,6 @@ import { CadmusRefsAssertedChronotopeModule } from '@myrmidon/cadmus-refs-assert
     MonacoEditorModule.forRoot(),
     // markdown
     MarkdownModule.forRoot(),
-    // moment
-    MomentModule,
     // myrmidon
     NgToolsModule,
     NgMatToolsModule,
@@ -186,6 +187,11 @@ import { CadmusRefsAssertedChronotopeModule } from '@myrmidon/cadmus-refs-assert
       provide: HTTP_INTERCEPTORS,
       useClass: AuthJwtInterceptor,
       multi: true,
+    },
+    {
+      provide: LOCALE_ID,
+      deps: [WindowRefService],
+      useFactory: languageFactory,
     },
   ],
   bootstrap: [AppComponent],
