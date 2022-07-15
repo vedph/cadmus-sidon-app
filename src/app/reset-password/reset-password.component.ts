@@ -38,19 +38,19 @@ export class ResetPasswordComponent {
     }
 
     this.busy = true;
-    this._accountService.resetPassword(this.email.value).subscribe(
-      () => {
+    this._accountService.resetPassword(this.email.value).subscribe({
+      next: () => {
         this.busy = false;
         this._snackbar.open(`Message sent to ${this.email.value}`, 'OK');
       },
-      (error) => {
+      error: (error) => {
         this.busy = false;
         console.error(error);
         this._snackbar.open(
           `Error sending message to ${this.email.value}`,
           'OK'
         );
-      }
-    );
+      },
+    });
   }
 }
