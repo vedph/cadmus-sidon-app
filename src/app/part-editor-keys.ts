@@ -5,6 +5,7 @@ import {
 } from '@myrmidon/cadmus-part-general-ui';
 import {
   APPARATUS_FRAGMENT_TYPEID,
+  ORTHOGRAPHY_FRAGMENT_TYPEID,
 } from '@myrmidon/cadmus-part-philology-ui';
 import { PartEditorKeys } from '@myrmidon/cadmus-core';
 
@@ -33,6 +34,7 @@ export const PART_EDITOR_KEYS: PartEditorKeys = {
     part: GENERAL,
     fragments: {
       [APPARATUS_FRAGMENT_TYPEID]: PHILOLOGY,
+      [ORTHOGRAPHY_FRAGMENT_TYPEID]: PHILOLOGY,
     },
   },
 };
