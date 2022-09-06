@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -48,9 +48,7 @@ import { MarkdownModule } from 'ngx-markdown';
 // myrmidon
 import {
   EnvServiceProvider,
-  languageFactory,
   NgToolsModule,
-  WindowRefService,
 } from '@myrmidon/ng-tools';
 import { NgMatToolsModule } from '@myrmidon/ng-mat-tools';
 import {
@@ -187,12 +185,7 @@ import { ITEM_BROWSER_KEYS } from './item-browser-keys';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthJwtInterceptor,
       multi: true,
-    },
-    {
-      provide: LOCALE_ID,
-      deps: [WindowRefService],
-      useFactory: languageFactory,
-    },
+    }
   ],
   bootstrap: [AppComponent],
 })
