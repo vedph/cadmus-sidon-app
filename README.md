@@ -10,6 +10,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## History
 
+- 2022-09-08: upgraded Angular.
+
 ### 1.0.2
 
 - 2022-09-05: added orthography layer.
