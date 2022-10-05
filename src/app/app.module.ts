@@ -71,6 +71,9 @@ import { CadmusUiModule } from '@myrmidon/cadmus-ui';
 import { CadmusUiPgModule } from '@myrmidon/cadmus-ui-pg';
 import { CadmusRefsAssertionModule } from '@myrmidon/cadmus-refs-assertion';
 import { CadmusRefsAssertedChronotopeModule } from '@myrmidon/cadmus-refs-asserted-chronotope';
+import { CadmusTextBlockViewModule } from '@myrmidon/cadmus-text-block-view';
+import { CadmusPreviewUiModule } from '@myrmidon/cadmus-preview-ui';
+import { CadmusPreviewPgModule } from '@myrmidon/cadmus-preview-pg';
 
 // locals
 import { AppRoutingModule } from './app-routing.module';
@@ -158,6 +161,10 @@ import { ITEM_BROWSER_KEYS } from './item-browser-keys';
     CadmusStateModule,
     CadmusUiModule,
     CadmusUiPgModule,
+    // preview
+    CadmusTextBlockViewModule,
+    CadmusPreviewUiModule,
+    CadmusPreviewPgModule
   ],
   providers: [
     EnvServiceProvider,
