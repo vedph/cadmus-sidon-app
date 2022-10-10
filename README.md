@@ -28,6 +28,7 @@ Production:
 
 ## History
 
+- 2022-10-10: more preview styles.
 - 2022-10-05:
   - updated packages.
   - added [preview infrastructure](https://github.com/vedph/cadmus_doc/blob/master/guide/adding-preview.md).
