@@ -28,6 +28,7 @@ Production:
 
 ## History
 
+- 2022-11-10: updated Angular and packages.
 - 2022-10-10: more preview styles.
 - 2022-10-05:
   - updated packages.
