@@ -6,12 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. update version in `src/env.js`.
 2. `ng build --configuration production`
-3. `docker build . -t vedph2020/cadmus-sidon-app:1.0.4 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
+3. `docker build . -t vedph2020/cadmus-sidon-app:2.0.0 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
 
 Production:
 
-1. build as above.
-2. change `dist/env.js` so that it looks like this:
+(1) build as above.
+(2) change `dist/env.js` so that it looks like this:
 
 ```js
 // https://www.jvandemo.com/how-to-use-environment-variables-to-configure-your-angular-application-without-a-rebuild/
@@ -24,10 +24,15 @@ Production:
 })(this);
 ```
 
-3. `docker build . -t vedph2020/cadmus-sidon-app:1.0.4-prod`.
+(3) `docker build . -t vedph2020/cadmus-sidon-app:1.0.4-prod`.
 
 ## History
 
+### 2.0.0
+
+- 2022-12-17:
+  - upgraded to Angular 15.
+  - replaced Akita with ELF.
 - 2022-11-10: updated Angular and packages.
 - 2022-10-10: more preview styles.
 - 2022-10-05:

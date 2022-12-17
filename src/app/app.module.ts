@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -36,20 +36,19 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
-// akita
-import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+// ELF
+import { devTools } from '@ngneat/elf-devtools';
+import { Actions } from '@ngneat/effects-ng';
+
 // ngx-monaco
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 // ngx-markdown
 import { MarkdownModule } from 'ngx-markdown';
 
 // myrmidon
-import {
-  EnvServiceProvider,
-  NgToolsModule,
-} from '@myrmidon/ng-tools';
+import { NgxDirtyCheckModule } from '@myrmidon/ngx-dirty-check';
+import { EnvServiceProvider, NgToolsModule } from '@myrmidon/ng-tools';
 import { NgMatToolsModule } from '@myrmidon/ng-mat-tools';
 import {
   AuthJwtInterceptor,
@@ -86,6 +85,16 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { PART_EDITOR_KEYS } from './part-editor-keys';
 import { INDEX_LOOKUP_DEFINITIONS } from './index-lookup-definitions';
 import { ITEM_BROWSER_KEYS } from './item-browser-keys';
+
+// https://ngneat.github.io/elf/docs/dev-tools/
+export function initElfDevTools(actions: Actions) {
+  return () => {
+    devTools({
+      name: 'Cadmus Sidon',
+      actionsDispatcher: actions,
+    });
+  };
+}
 
 @NgModule({
   declarations: [
@@ -136,9 +145,6 @@ import { ITEM_BROWSER_KEYS } from './item-browser-keys';
     MatTooltipModule,
     MatToolbarModule,
     MatTreeModule,
-    FlexLayoutModule,
-    // akita
-    AkitaNgDevtools.forRoot(),
     // monaco
     MonacoEditorModule.forRoot(),
     // markdown
@@ -148,6 +154,7 @@ import { ITEM_BROWSER_KEYS } from './item-browser-keys';
     NgMatToolsModule,
     AuthJwtLoginModule,
     AuthJwtAdminModule,
+    NgxDirtyCheckModule,
     // cadmus bricks
     CadmusRefsDocReferencesModule,
     CadmusRefsHistoricalDateModule,
@@ -164,7 +171,7 @@ import { ITEM_BROWSER_KEYS } from './item-browser-keys';
     // preview
     CadmusTextBlockViewModule,
     CadmusPreviewUiModule,
-    CadmusPreviewPgModule
+    CadmusPreviewPgModule,
   ],
   providers: [
     EnvServiceProvider,
@@ -192,7 +199,14 @@ import { ITEM_BROWSER_KEYS } from './item-browser-keys';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthJwtInterceptor,
       multi: true,
-    }
+    },
+    // ELF dev tools
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      useFactory: initElfDevTools,
+      deps: [Actions],
+    },
   ],
   bootstrap: [AppComponent],
 })
