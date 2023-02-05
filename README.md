@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. update version in `src/env.js`.
 2. `ng build --configuration production`
-3. `docker build . -t vedph2020/cadmus-sidon-app:2.0.1 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
+3. `docker build . -t vedph2020/cadmus-sidon-app:2.0.2 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
 
 Production:
 
@@ -27,6 +27,10 @@ Production:
 (3) `docker build . -t vedph2020/cadmus-sidon-app:1.0.4-prod`.
 
 ## History
+
+### 2.0.2
+
+- 2023-02-05: updated Angular and packages.
 
 ### 2.0.1
 
