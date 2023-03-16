@@ -28,6 +28,8 @@ Production:
 
 ## History
 
+- 2023-03-16: updated Angular and packages.
+
 ### 2.0.2
 
 - 2023-02-05: updated Angular and packages.
