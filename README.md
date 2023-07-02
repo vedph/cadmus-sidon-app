@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. update version in `src/env.js`.
 2. `ng build --configuration production`
-3. `docker build . -t vedph2020/cadmus-sidon-app:2.0.2 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
+3. `docker build . -t vedph2020/cadmus-sidon-app:3.0.0 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
 
 Production:
 
@@ -28,6 +28,9 @@ Production:
 
 ## History
 
+- 2023-07-02:
+  - updated Angular and packages.
+  - migrated to PostgreSQL.
 - 2023-03-16: updated Angular and packages.
 
 ### 2.0.2
