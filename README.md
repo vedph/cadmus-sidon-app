@@ -28,6 +28,10 @@ Production:
 
 ## History
 
+- 2023-11-11:
+  - ⚠️ upgraded to Angular 17.
+  - opted in for flags editor.
+  - opted in for thesauri import.
 - 2023-07-02:
   - updated Angular and packages.
   - migrated to PostgreSQL.

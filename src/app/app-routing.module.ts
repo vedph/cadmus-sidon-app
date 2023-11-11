@@ -79,6 +79,14 @@ const routes: Routes = [
       ),
     canActivate: [EditorGuardService],
   },
+  // cadmus - flags
+  {
+    path: 'flags',
+    loadChildren: () =>
+      import('@myrmidon/cadmus-flags-pg').then(
+        (module) => module.CadmusFlagsPgModule
+      ),
+  },
   // cadmus - parts
   {
     path: 'items/:iid/general',
@@ -111,10 +119,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      initialNavigation: 'enabledBlocking',
-      useHash: true,
-    }),
+    RouterModule.forRoot(routes),
   ],
   exports: [RouterModule],
 })
