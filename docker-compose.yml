@@ -30,7 +30,7 @@ services:
     image: vedph2020/cadmus-sidon-api:5.0.0
     container_name: cadmus-sidon-api
     ports:
-      - 5228:80
+      - 5228:8080
     depends_on:
       - cadmus-sidon-mongo
       - cadmus-sidon-pgsql
