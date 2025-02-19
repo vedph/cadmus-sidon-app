@@ -27,7 +27,7 @@ services:
 
   # Cadmus API
   cadmus-sidon-api:
-    image: vedph2020/cadmus-sidon-api:5.0.0
+    image: vedph2020/cadmus-sidon-api:5.0.1
     container_name: cadmus-sidon-api
     ports:
       - 5228:8080
@@ -50,7 +50,7 @@ services:
 
   # Cadmus app
   cadmus-sidon-app:
-    image: vedph2020/cadmus-sidon-app:4.0.0
+    image: vedph2020/cadmus-sidon-app:4.0.1
     container_name: cadmus-sidon-app
     ports:
       - 4200:80

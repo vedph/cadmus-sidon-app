@@ -6,7 +6,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 1. update version in `src/env.js`.
 2. `ng build --configuration production`.
-3. `docker build . -t vedph2020/cadmus-sidon-app:4.0.0 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
+3. `docker build . -t vedph2020/cadmus-sidon-app:4.0.1 -t vedph2020/cadmus-sidon-app:latest` (replace with the current version).
 
 ## Setup
 
@@ -20,6 +20,8 @@ npm i @auth0/angular-jwt @myrmidon/auth-jwt-admin @myrmidon/auth-jwt-login @myrm
 ```
 
 ## History
+
+### 4.0.1
 
 - 2025-02-19: updated Angular and packages.
 
