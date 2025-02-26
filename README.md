@@ -21,6 +21,8 @@ npm i @auth0/angular-jwt @myrmidon/auth-jwt-admin @myrmidon/auth-jwt-login @myrm
 
 ## History
 
+- 2025-02-26: updated Angular and packages.
+
 ### 4.0.1
 
 - 2025-02-19: updated Angular and packages.
