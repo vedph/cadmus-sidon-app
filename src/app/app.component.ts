@@ -1,5 +1,5 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -31,14 +31,12 @@ import {
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
     RouterModule,
     RouterOutlet,
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
-    // myrmidon
     GravatarPipe,
   ],
   templateUrl: './app.component.html',

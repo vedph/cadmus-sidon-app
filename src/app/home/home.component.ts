@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthJwtService } from '@myrmidon/auth-jwt-login';
@@ -7,7 +6,7 @@ import { AuthJwtService } from '@myrmidon/auth-jwt-login';
   selector: 'cadmus-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [CommonModule, MatIconModule],
+  imports: [MatIconModule],
 })
 export class HomeComponent {
   public logged: boolean;
